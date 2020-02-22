@@ -61,21 +61,21 @@ class ElapsedFuturesSession(FuturesSession):
 
 def print_info(title, info, color=True):
     if color:
-        print(Style.BRIGHT + Fore.GREEN + "[" +
+        print(Style.BRIGHT + Fore.YELLOW + "[" +
             Fore.YELLOW + "*" +
-            Fore.GREEN + f"] {title}" +
+            Fore.YELLOW + f"] {title}" +
             Fore.WHITE + f" {info}" +
-            Fore.GREEN + " on:")
+            Fore.YELLOW + " on:")
     else:
         print(f"[*] {title} {info} on:")
 
 def print_error(err, errstr, var, verbose=False, color=True):
     if color:
-        print(Style.BRIGHT + Fore.WHITE + "[" +
+        print(Style.BRIGHT + Fore.RED + "[" +
             Fore.RED + "-" +
-            Fore.WHITE + "]" +
+            Fore.RED + "]" +
             Fore.RED + f" {errstr}" +
-            Fore.YELLOW + f" {err if verbose else var}")
+            Fore.RED + f" {err if verbose else var}")
     else:
         print(f"[-] {errstr} {err if verbose else var}")
 
@@ -90,7 +90,8 @@ def print_found(social_network, url, response_time, verbose=False, color=True):
             Fore.GREEN + "+" +
             Fore.WHITE + "]" +
             format_response_time(response_time, verbose) +
-            Fore.GREEN + f" {social_network}:"), url)
+            Fore.YELLOW + f" {social_network}:" +
+            Fore.GREEN + f" {url}"))
     else:
         print(f"[+]{format_response_time(response_time, verbose)} {social_network}: {url}")
 
@@ -100,19 +101,19 @@ def print_not_found(social_network, response_time, verbose=False, color=True):
             Fore.RED + "-" +
             Fore.WHITE + "]" +
             format_response_time(response_time, verbose) +
-            Fore.GREEN + f" {social_network}:" +
-            Fore.YELLOW + " Not Found!"))
+            Fore.YELLOW + f" {social_network}:" +
+            Fore.RED + " Not Found!"))
     else:
         print(f"[-]{format_response_time(response_time, verbose)} {social_network}: Not Found!")
 
 def print_invalid(social_network, msg, color=True):
     """Print invalid search result."""
     if color:
-        print((Style.BRIGHT + Fore.WHITE + "[" +
+        print((Style.BRIGHT + Fore.RED + "[" +
             Fore.RED + "-" +
-            Fore.WHITE + "]" +
-            Fore.GREEN + f" {social_network}:" +
-            Fore.YELLOW + f" {msg}"))
+            Fore.RED + "]" +
+            Fore.YELLOW + f" {social_network}:" +
+            Fore.RED + f" {msg}"))
     else:
         print(f"[-] {social_network} {msg}")
 
