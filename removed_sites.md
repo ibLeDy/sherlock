@@ -6,6 +6,86 @@ They are listed here in the hope that things may change in the future
 so they may be re-included.
 
 
+## Basecamp
+
+As of 2020-02-23, all usernames are reported as not existing.
+
+Why was this ever added?  It does not look like a social network.
+
+```
+  "Basecamp": {
+    "errorMsg": "The account you were looking for doesn't exist",
+    "errorType": "message",
+    "rank": 4914,
+    "url": "https://{}.basecamphq.com",
+    "urlMain": "https://basecamp.com/",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+```
+
+## Fanpop
+
+As of 2020-02-23, all usernames are reported as not existing.
+
+```
+  "fanpop": {
+    "errorType": "response_url",
+    "errorUrl": "http://www.fanpop.com/",
+    "rank": 9454,
+    "url": "http://www.fanpop.com/fans/{}",
+    "urlMain": "http://www.fanpop.com/",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewould_everusethis7"
+  },
+```
+
+## Canva
+
+As of 2020-02-23, all usernames are reported as not existing.
+
+```
+  "Canva": {
+    "errorType": "response_url",
+    "errorUrl": "https://www.canva.com/{}",
+    "rank": 128,
+    "url": "https://www.canva.com/{}",
+    "urlMain": "https://www.canva.com/",
+    "username_claimed": "jenny",
+    "username_unclaimed": "xgtrq"
+  },
+```
+
+## Pixabay
+
+As of 2020-01-21, all usernames are reported as not existing.
+
+```
+  "Pixabay": {
+    "errorType": "status_code",
+    "rank": 378,
+    "url": "https://pixabay.com/en/users/{}",
+    "urlMain": "https://pixabay.com/",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+```
+
+## Pexels
+
+As of 2020-01-21, all usernames are reported as not existing.
+
+```
+  "Pexels": {
+    "errorType": "status_code",
+    "rank": 745,
+    "url": "https://www.pexels.com/@{}",
+    "urlMain": "https://www.pexels.com/",
+    "username_claimed": "bruno",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+```
+
 ## RamblerDating
 
 As of 2019-12-31, site always times out.
@@ -146,23 +226,6 @@ Usernames that don't exist are detected.
     "urlMain": "https://www.paypal.me/",
     "username_claimed": "blue",
     "username_unclaimed": "noneownsthisusername"
-  },
-```
-
-## Duolingo
-
-Usernames that don't exist are detected.
-
-```
-  "Duolingo": {
-    "errorType": "response_url",
-    "errorUrl": "https://www.duolingo.com/errors/404.html",
-    "rank": 538,
-    "regexCheck": "^[a-zA-Z0-9_-]{3,16}$",
-    "url": "https://www.duolingo.com/{}",
-    "urlMain": "https://www.duolingo.com/",
-    "username_claimed": "blue",
-    "username_unclaimed": "noonewoulduse"
   },
 ```
 
@@ -338,5 +401,41 @@ As of 2020-02-17, CapFriendly returns fake profile pages for non-existing users,
     "urlMain": "https://www.capfriendly.com/",
     "username_claimed": "user",
     "username_unclaimed": "noonewouldeverusethis"
+  },
+```
+
+
+## Furaffinity
+
+As of 2020-02-23, Furaffinity returns false postives because they are now using Cloudflair, which prevents Sherlock from checking if the user
+exists or not.
+
+```
+  "furaffinity": {
+    "errorMsg": "user cannot be found",
+    "errorType": "message",
+    "rank": 0,
+    "url": "https://www.furaffinity.net/user/{}",
+    "urlMain": "https://www.furaffinity.net",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis777777"
+  },
+```
+
+
+## InsaneJournal 
+
+As of 2020-02-23, InsaneJournal returns false positive, when providing a username which contains a period.
+Since we were not able to find the critera for a valid username, the best thing to do now is to remove it.
+
+```
+  "InsaneJournal": {
+    "errorMsg": "Unknown user",
+    "errorType": "message",
+    "rank": 29728,
+    "url": "http://{}.insanejournal.com/profile",
+    "urlMain": "insanejournal.com",
+    "username_claimed": "blue",
+    "username_unclaimed": "dlyr6cd"
   },
 ```
